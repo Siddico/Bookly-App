@@ -1,8 +1,7 @@
-import 'package:bookly/Core/utils/assets.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_appbar.dart';
-import 'custom_horizontal_list_view_item.dart';
+import 'featured_horizontal_list_view.dart';
 
 class HomeViewBody extends StatelessWidget {
   const HomeViewBody({super.key});
@@ -10,7 +9,7 @@ class HomeViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [const CustomAppBar(), CustomHorizontalListViewItem()],
+      children: const [const CustomAppBar(), FeaturedHorizontalListView()],
     );
   }
 }

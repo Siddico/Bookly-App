@@ -19,7 +19,7 @@ class HomeViewBody extends StatelessWidget {
           const CustomAppBar(),
           FeaturedHorizontalListView(),
           const SizedBox(
-            height: 35,
+            height: 30,
           ),
           Text('Best Seller', style: styles.textStyle18),
           const SizedBox(

@@ -1,4 +1,6 @@
 import 'package:bookly/Core/utils/styles.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/rating_and_its_number.dart';
+import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/utils/assets.dart';
@@ -26,18 +28,43 @@ class CustomBestSellerListViewItem extends StatelessWidget {
           const SizedBox(
             width: 30,
           ),
-          Column(
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width * .5,
-                child: const Text(
-                  'Harry Potter And The Goblet Of Fire',
-                  style: styles.textStyle20,
-                  maxLines: 2,
-                  overflow: TextOverflow.ellipsis,
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                SizedBox(
+                  width: MediaQuery.of(context).size.width * .5,
+                  child: Text(
+                    'Harry Potter And The Goblet Of Fire',
+                    style:
+                        styles.textStyle20.copyWith(fontFamily: KGTSectraFine),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
                 ),
-              )
-            ],
+                const SizedBox(
+                  height: 3,
+                ),
+                Text(
+                  'J. K. Rowling',
+                  style: styles.textStyle14.copyWith(color: Color(0xff707070)),
+                ),
+                const SizedBox(
+                  height: 3,
+                ),
+                Row(
+                  children: [
+                    Text(
+                      '19.99',
+                      style: styles.textStyle20
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                    const Spacer(),
+                    const RatingAndItsNumber()
+                  ],
+                )
+              ],
+            ),
           )
         ],
       ),

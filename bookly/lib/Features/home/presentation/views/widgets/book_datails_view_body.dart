@@ -1,4 +1,5 @@
 import 'package:bookly/Core/utils/styles.dart';
+import 'package:bookly/Features/home/presentation/views/widgets/rating_and_its_number.dart';
 import 'package:flutter/material.dart';
 
 import 'custom_book_details_appbar.dart';
@@ -42,7 +43,13 @@ class BookDetailsViewBody extends StatelessWidget {
               style: styles.textStyle18.copyWith(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
             ),
-          )
+          ),
+          const SizedBox(
+            height: 18,
+          ),
+          const RatingAndItsNumber(
+            mainAxisAlignment: MainAxisAlignment.center,
+          ),
         ],
       ),
     );

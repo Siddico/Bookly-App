@@ -53,10 +53,9 @@ class CustomBestSellerListViewItem extends StatelessWidget {
                     const SizedBox(
                       height: 3,
                     ),
-                    Text(
-                      'J. K. Rowling',
-                      style:
-                          styles.textStyle14.copyWith(color: Color(0xff707070)),
+                    Opacity(
+                      opacity: 0.50,
+                      child: Text('J. K. Rowling', style: styles.textStyle14),
                     ),
                     const SizedBox(
                       height: 3,

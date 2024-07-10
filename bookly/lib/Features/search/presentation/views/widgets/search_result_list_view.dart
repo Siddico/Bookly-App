@@ -13,7 +13,7 @@ class SearchResultListView extends StatelessWidget {
         padding: EdgeInsets.all(0),
         itemCount: 10,
         itemBuilder: (context, index) {
-          return CustomBestSellerListViewItem();
+          // return CustomBestSellerListViewItem();
         });
   }
 }

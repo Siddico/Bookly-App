@@ -3,6 +3,8 @@ import 'package:bookly/Core/utils/service_locator.dart';
 import 'package:bookly/Features/home/data/repos/home_repo_implement.dart';
 import 'package:bookly/Features/home/presentation/manager/featered_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/Features/home/presentation/manager/newest_books_cubit/newest_books_cubit.dart';
+import 'package:bookly/Features/home/presentation/manager/similar_books_cubit/simailar_books_cubit.dart';
+import 'package:bookly/Features/search/presentation/manager/searched_books_cubit/searched_books_cubit.dart';
 import 'package:bookly/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

@@ -17,6 +17,7 @@ class VolumeInfo extends Equatable {
   final String? printType;
   final List<String>? categories;
   final String? maturityRating;
+  // final num? averageRating;
   final bool? allowAnonLogging;
   final String? contentVersion;
   final PanelizationSummary? panelizationSummary;
@@ -35,6 +36,7 @@ class VolumeInfo extends Equatable {
     this.industryIdentifiers,
     this.readingModes,
     this.pageCount,
+    // this.averageRating,
     this.printType,
     this.categories,
     this.maturityRating,
@@ -80,6 +82,8 @@ class VolumeInfo extends Equatable {
         previewLink: json['previewLink'] as String?,
         infoLink: json['infoLink'] as String?,
         canonicalVolumeLink: json['canonicalVolumeLink'] as String?,
+        // averageRating:
+        //     json['averageRating'] == null ? null : json['averageRating'],
       );
 
   Map<String, dynamic> toJson() => {
@@ -103,6 +107,7 @@ class VolumeInfo extends Equatable {
         'previewLink': previewLink,
         'infoLink': infoLink,
         'canonicalVolumeLink': canonicalVolumeLink,
+        // 'averageRating': averageRating,
       };
 
   @override
@@ -127,6 +132,7 @@ class VolumeInfo extends Equatable {
       previewLink,
       infoLink,
       canonicalVolumeLink,
+      // averageRating
     ];
   }
 }

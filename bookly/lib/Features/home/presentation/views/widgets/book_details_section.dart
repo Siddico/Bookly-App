@@ -1,3 +1,4 @@
+import 'package:bookly/Features/home/data/models/book_model/book_model.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/utils/styles.dart';
@@ -6,8 +7,8 @@ import 'custom_horizontal_list_view_item.dart';
 import 'rating_and_its_number.dart';
 
 class BookDetailsSection extends StatelessWidget {
-  const BookDetailsSection({super.key});
-
+  const BookDetailsSection({super.key, required this.book});
+  final BookModel book;
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
@@ -16,9 +17,8 @@ class BookDetailsSection extends StatelessWidget {
       children: [
         Padding(
           padding: EdgeInsets.symmetric(horizontal: width * .17),
-          child: const CustomHorizontalListViewItem(
-            imageUrl:
-                'https://avatars.githubusercontent.com/u/158765874?s=400&u=e115ea47d4292481924877adeb0b742601466463&v=4',
+          child: CustomHorizontalListViewItem(
+            imageUrl: book.volumeInfo!.imageLinks!.thumbnail!,
           ),
         ),
         const SizedBox(
@@ -26,8 +26,11 @@ class BookDetailsSection extends StatelessWidget {
         ),
         Center(
           child: Text(
-            'The Junngle Book',
+            book.volumeInfo!.title!,
             style: styles.textStyle30,
+            textAlign: TextAlign.center,
+            maxLines: 2,
+            overflow: TextOverflow.ellipsis,
           ),
         ),
         const SizedBox(
@@ -37,7 +40,7 @@ class BookDetailsSection extends StatelessWidget {
           opacity: 0.7,
           child: Center(
             child: Text(
-              'Rudyard kipling',
+              book.volumeInfo!.authors![0],
               style: styles.textStyle18.copyWith(
                   fontStyle: FontStyle.italic, fontWeight: FontWeight.w500),
             ),
@@ -46,15 +49,17 @@ class BookDetailsSection extends StatelessWidget {
         const SizedBox(
           height: 18,
         ),
-        const RatingAndItsNumber(
-          rating: 5,
-          count: 200,
+        RatingAndItsNumber(
+          rating: book.volumeInfo!.pageCount!,
+          count: book.volumeInfo!.pageCount!,
           mainAxisAlignment: MainAxisAlignment.center,
         ),
         const SizedBox(
           height: 37,
         ),
-        const BooksAction(),
+        BooksAction(
+          bookModel: book,
+        ),
       ],
     );
   }

@@ -20,7 +20,10 @@ class CustomHorizontalListViewItem extends StatelessWidget {
             size: 50,
           ),
           placeholder: (context, url) => const Center(
-            child: CircularProgressIndicator(),
+            child: SizedBox(
+                // height: 50,
+                // width: 35,
+                child: Image(image: AssetImage('assets/images/looading.gif'))),
           ),
         ),
       ),

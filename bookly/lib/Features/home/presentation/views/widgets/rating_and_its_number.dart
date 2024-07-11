@@ -8,7 +8,7 @@ class RatingAndItsNumber extends StatelessWidget {
       this.mainAxisAlignment = MainAxisAlignment.start,
       required this.count,
       required this.rating});
-  final int rating;
+  final num rating;
   final int count;
   final MainAxisAlignment mainAxisAlignment;
   @override
